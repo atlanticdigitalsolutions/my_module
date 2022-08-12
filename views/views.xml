@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+
+    <record id="my_module_form_view" model="ir.ui.view">
+        <field name="name">My module form view</field>
+        <field name="model">my.module</field>
+        <field name="arch" type="xml">
+            <form string="My module">
+                <group col="7" string="My module">
+                    <field name="name"/>
+                    <field name="lastName"/>
+                    <field name="genre"/>
+                    <field name="article_id"/>
+                    <field name="partner_id"/>
+                    <field name="sale_order_ids"/>
+                    <field name="students"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="my_module_tree_view" model="ir.ui.view">
+        <field name="name">My module tree view</field>
+        <field name="model">my.module</field>
+        <field name="arch" type="xml">
+            <tree string="My module">
+                <field name="name"/>
+                <field name="lastName"/>
+                <field name="genre"/>
+                <field name="article_id"/>
+                <field name="partner_id"/>
+                <field name="sale_order_ids"/>
+                <field name="students"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="action_my_module" model="ir.actions.act_window">
+        <field name="name">My module</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">my.module</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="target">current</field>
+    </record>
+
+    <menuitem 
+        name="My module" 
+        id="menu_my_module" 
+        action="action_my_module"
+    />
+
+</odoo>
+
